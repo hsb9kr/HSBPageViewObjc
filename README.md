@@ -22,7 +22,7 @@ pod 'HSBPageViewObjc'
 
 ## Author
 
-hsb9kr, hsb9kr@KimSeong-gooui-MacBook-Pro.local
+Hong Sangbo, hsb9kr@gmail.com
 
 ## License
 

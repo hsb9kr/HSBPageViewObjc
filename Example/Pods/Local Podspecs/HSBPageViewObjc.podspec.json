@@ -1,0 +1,22 @@
+{
+  "name": "HSBPageViewObjc",
+  "version": "0.1.0",
+  "summary": "A short description of HSBPageViewObjc.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/hsb9kr/HSBPageViewObjc",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "hsb9kr": "hsb9kr@KimSeong-gooui-MacBook-Pro.local"
+  },
+  "source": {
+    "git": "https://github.com/hsb9kr/HSBPageViewObjc.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "HSBPageViewObjc/Classes/**/*"
+}
