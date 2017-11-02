@@ -16,6 +16,7 @@ typedef enum : NSUInteger {
 @protocol HSBPageViewDataSource;
 @protocol HSBPageViewDelegate;
 
+IB_DESIGNABLE
 @interface HSBPageView : UIView {
     @private
     UIScrollView *_scrollView;
@@ -45,8 +46,9 @@ typedef enum : NSUInteger {
 @property (nonatomic) IBInspectable CGFloat borderWidth;
 @property (nonatomic) IBInspectable CGFloat cornerRadius;
 @property (nonatomic) IBInspectable BOOL bounces;
-
-
+@property (strong, nonatomic) IBInspectable UIColor *cBorderColor;
+@property (nonatomic) IBInspectable CGFloat cBorderWidth;
+@property (nonatomic) IBInspectable CGFloat cCornerRadius;
 @property (nonatomic, readonly) NSInteger currentIndex;
 @property (strong, nonatomic, readonly) UIView *currentView;
 

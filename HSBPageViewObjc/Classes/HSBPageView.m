@@ -135,6 +135,10 @@
         
         UIView *view = [_dataSource hsbPageView:self viewForIndex:index];
         
+        view.layer.borderColor = _cBorderColor.CGColor;
+        view.layer.borderWidth = _cBorderWidth;
+        view.layer.cornerRadius = _cCornerRadius;
+        
         CGRect expectedFrame = CGRectMake(self.bounds.size.width * index, 0, self.bounds.size.width, self.bounds.size.height);
         
         if (_delegateFlags.frameForIndexFlag) {
