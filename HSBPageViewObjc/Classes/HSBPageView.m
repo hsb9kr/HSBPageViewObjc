@@ -219,7 +219,7 @@
     
     if (_index != currentIndex && currentIndex < _views.count) {
         _index = currentIndex;
-        if (_delegateFlags.willDisplayViewFlag) [_delegate hsbPageView:self willDisplayView:_views[_index] forIndex:_index];
+        if (_delegateFlags.willDisplayViewFlag) [_delegate hsbPageView:self willDisplayView:_views[_index].subviews.firstObject forIndex:_index];
     }
 }
 
