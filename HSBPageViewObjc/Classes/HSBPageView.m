@@ -7,8 +7,12 @@
 //
 
 #import "HSBPageView.h"
+#import "CustomScrollView.h"
 
 @interface HSBPageView(UIScrollViewDelegate) <UIScrollViewDelegate>
+@end
+
+@interface HSBPageView(CustomScrollViewDelegate) <CustomScrollViewDelegate>
 @end
 
 @implementation HSBPageView
@@ -132,31 +136,31 @@
     
     for (NSInteger index = 0; index < number; index++) {
         if (!_dataSourceFlags.viewForIndexFlag) continue;
-        
+		
+		UIView *contentView = [[UIView alloc] init];
+		contentView.backgroundColor = UIColor.clearColor;
+		
         UIView *view = [_dataSource hsbPageView:self viewForIndex:index];
-        
+        [contentView addSubview:view];
+		
         view.layer.borderColor = _cBorderColor.CGColor;
         view.layer.borderWidth = _cBorderWidth;
         view.layer.cornerRadius = _cCornerRadius;
         
         CGRect expectedFrame = CGRectMake(self.bounds.size.width * index, 0, self.bounds.size.width, self.bounds.size.height);
-        
-        if (_delegateFlags.frameForIndexFlag) {
-            CGRect viewFrame = [_delegate hsbPageView:self frameForIndex:index];
-            expectedFrame.origin.x += viewFrame.origin.x;
-            expectedFrame.origin.y += viewFrame.origin.y;
-            expectedFrame.size = viewFrame.size;
+		contentView.frame = expectedFrame;
+		
+		expectedFrame.origin = CGPointZero;
+		view.frame = expectedFrame;
+		
+		if (_delegateFlags.frameForIndexFlag) {
+            view.frame =  [_delegate hsbPageView:self frameForIndex:index];
         }
-        
-        view.frame = expectedFrame;
+		
         if (_delegateFlags.didLoadViewFlag) [_delegate hsbPageView:self didLoadView:view forIndex:index];
         
-        [tempViews addObject:view];
-        [_scrollView addSubview:view];
-        
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapView:)];
-        [view addGestureRecognizer:tapGesture];
-        view.userInteractionEnabled = YES;
+        [tempViews addObject:contentView];
+        [_scrollView addSubview:contentView];
     }
     
     _views = tempViews;
@@ -192,25 +196,17 @@
 
 - (void)initialize {
     _index = 0;
-    
+	
     _reuseViewClass = [[NSMutableDictionary alloc] init];
     
-    _scrollView = [[UIScrollView alloc] init];
+    _scrollView = [[CustomScrollView alloc] init];
     _scrollView.delegate = self;
+	
     _scrollView.pagingEnabled = YES;
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = NO;
     [self addSubview:_scrollView];
 }
-
-#pragma mark - Touch
-
-- (void)tapView:(UITapGestureRecognizer *)tapGesture {
-    UIView *view = tapGesture.view;
-    NSInteger index = [_views indexOfObject:view];
-    if (_delegateFlags.didSelectIndexFlag) [_delegate hsbPageView:self didSelectIndex:index];
-}
-
 @end
 
 @implementation HSBPageView(UIScrollViewDelegate)
@@ -235,3 +231,11 @@
     }
 }
 @end
+
+@implementation HSBPageView(CustomScrollViewDelegate)
+
+- (void)scrollView:(CustomScrollView *)scrollView selectedIndex:(NSInteger)index {
+	if (_delegateFlags.didSelectIndexFlag) [_delegate hsbPageView:self didSelectIndex:index];
+}
+@end
+

@@ -13,8 +13,8 @@
 		CCAC63B71FA2D27700DCF1DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCAC63B61FA2D27700DCF1DE /* Assets.xcassets */; };
 		CCAC63BA1FA2D27700DCF1DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAC63B81FA2D27700DCF1DE /* LaunchScreen.storyboard */; };
 		CCAC63BD1FA2D27700DCF1DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAC63BC1FA2D27700DCF1DE /* main.m */; };
-		CCB30CDA1FA6BBF200F98032 /* ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB30CD91FA6BBF200F98032 /* ImageView.m */; };
 		CCB8BFE91FAAE1BE0020A784 /* HSBPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB8BFE71FAAE1BE0020A784 /* HSBPageView.m */; };
+		CCF1AB7C202AEE43003F94DC /* CustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF1AB7A202AEE43003F94DC /* CustomScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +28,10 @@
 		CCAC63B91FA2D27700DCF1DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCAC63BB1FA2D27700DCF1DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCAC63BC1FA2D27700DCF1DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CCB30CD81FA6BBF200F98032 /* ImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageView.h; sourceTree = "<group>"; };
-		CCB30CD91FA6BBF200F98032 /* ImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageView.m; sourceTree = "<group>"; };
 		CCB8BFE71FAAE1BE0020A784 /* HSBPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSBPageView.m; path = ../../HSBPageViewObjc/Classes/HSBPageView.m; sourceTree = "<group>"; };
 		CCB8BFE81FAAE1BE0020A784 /* HSBPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSBPageView.h; path = ../../HSBPageViewObjc/Classes/HSBPageView.h; sourceTree = "<group>"; };
+		CCF1AB7A202AEE43003F94DC /* CustomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomScrollView.m; path = ../../HSBPageViewObjc/Classes/CustomScrollView.m; sourceTree = "<group>"; };
+		CCF1AB7B202AEE43003F94DC /* CustomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomScrollView.h; path = ../../HSBPageViewObjc/Classes/CustomScrollView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +64,8 @@
 		CCAC63AC1FA2D27700DCF1DE /* ScrollViewObjc */ = {
 			isa = PBXGroup;
 			children = (
+				CCF1AB7B202AEE43003F94DC /* CustomScrollView.h */,
+				CCF1AB7A202AEE43003F94DC /* CustomScrollView.m */,
 				CCB8BFE81FAAE1BE0020A784 /* HSBPageView.h */,
 				CCB8BFE71FAAE1BE0020A784 /* HSBPageView.m */,
 				CCAC63AD1FA2D27700DCF1DE /* AppDelegate.h */,
@@ -75,8 +77,6 @@
 				CCAC63B81FA2D27700DCF1DE /* LaunchScreen.storyboard */,
 				CCAC63BB1FA2D27700DCF1DE /* Info.plist */,
 				CCAC63BC1FA2D27700DCF1DE /* main.m */,
-				CCB30CD81FA6BBF200F98032 /* ImageView.h */,
-				CCB30CD91FA6BBF200F98032 /* ImageView.m */,
 			);
 			path = ScrollViewObjc;
 			sourceTree = "<group>";
@@ -153,8 +153,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCAC63B21FA2D27700DCF1DE /* ViewController.m in Sources */,
-				CCB30CDA1FA6BBF200F98032 /* ImageView.m in Sources */,
 				CCAC63BD1FA2D27700DCF1DE /* main.m in Sources */,
+				CCF1AB7C202AEE43003F94DC /* CustomScrollView.m in Sources */,
 				CCAC63AF1FA2D27700DCF1DE /* AppDelegate.m in Sources */,
 				CCB8BFE91FAAE1BE0020A784 /* HSBPageView.m in Sources */,
 			);

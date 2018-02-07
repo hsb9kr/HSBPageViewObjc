@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "HSBPageView.h"
-#import "ImageView.h"
+
 @interface ViewController (HSBPageView) <HSBPageViewDataSource, HSBPageViewDelegate>
 @end
 
@@ -24,7 +24,6 @@
     view1.backgroundColor = UIColor.blueColor;
     view2.backgroundColor = UIColor.redColor;
     view3.backgroundColor = UIColor.yellowColor;
-//    [_pageView registerReuseViewIdentifier:@"imageView" class:ImageView.class];
 }
 
 
@@ -45,8 +44,8 @@
 }
 
 - (UIView *)hsbPageView:(HSBPageView *)hsbPageView viewForIndex:(NSInteger)index {
-//    ImageView *imageView = (ImageView *)[hsbPageView dequeueReusableViewWithIdentifier:@"imageView" forIndex:index];
-//    return imageView;
+
     return _views[index];
 }
+
 @end
