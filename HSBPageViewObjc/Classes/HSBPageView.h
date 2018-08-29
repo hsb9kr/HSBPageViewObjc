@@ -16,7 +16,6 @@ typedef enum : NSUInteger {
 @protocol HSBPageViewDataSource;
 @protocol HSBPageViewDelegate;
 
-IB_DESIGNABLE
 @interface HSBPageView : UIView {
     @private
     UIScrollView *_scrollView;
