@@ -118,6 +118,9 @@
 }
 
 - (void)reloadData {
+	
+	NSInteger index = _index;
+	
     _scrollView.frame = self.bounds;
     _scrollView.contentSize = self.bounds.size;
     
@@ -166,6 +169,8 @@
     _views = tempViews;
     
     [self sendSubviewToBack:_scrollView];
+	
+	[self scrollToIndex:index];
 }
 
 - (void)scrollToIndex:(NSInteger)index {
